@@ -45,6 +45,14 @@
 #
 # NOTE: The %reply% placeholder needs to be present in the format if you want the DiscordToMinecraftMessageReplyFormat to display in your message.
 #
+#   %text% = Placeholder ไม่ต้องแปล
+#Contributors (สามารถใส่ชื้่อไว้เลยถ้าช่วยแปล)
+#  Live_Laika
+#
+#
+# !!!  <Holder> คือพวก Color Shades ไม่ต้องแก้ เช่น <gold> , <gradient:dark_red:red>
+#            !!!               / คือการหยุดของ Color shades นั้นๆ เช่น </gold> , </gradient>
+#<bold> คือ Textformat ตัวหนา </bold> คือการหยุดของ textformat นั้น , /n คือการขี้นบรรทัดใหม่
 DiscordToMinecraftChatMessageFormat: "<white><</white>%toprolecolor%%name%%reply%<white>></white> %message%"
 DiscordToMinecraftChatMessageFormatNoRole: "<white><</white>%toprolecolor%%name%%reply%<white>></white> %message%"
 DiscordToMinecraftAllRolesSeparator: " | "
