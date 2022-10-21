@@ -88,15 +88,15 @@ messages:
   kills:
     mob: "&7ฆ่าม็อบ: &8{kills}"
     player: "&7ฆ่าผู้เล่น: &8{kills}"
-  blocks-mined: "&7ขุดไปแล้ว: &8{blocks}"
-  sheep-sheared: "&7ตัดไปแล้ว: &8{sheep}"
+  blocks-mined: "&7ขุดบล็อค: &8{blocks}"
+  sheep-sheared: "&7ตัดขนแกะ: &8{sheep}"
   dropped-by: "&7ดรอปโดย: &8{name}" # name will be player/mob name
   damage-taken: "&7ความเสียหายที่ได้รับ: &8{damage}"
   # Display this message if the player shift click trades/crafts items. It's not really easy to get every single item
   # that is crafted. The tag will only be added to the first item. If you don't want this message, simply replace them both with ""
   shift-click-warning:
-    crafting: "&cการสร้างไอเท็มผ่านการคลิกกะจะไม่ใช้แท็กกับแต่ละรายการอย่างสมบูรณ์ นี่เป็นข้อจำกัดของ Bukkit API"
-    trading: "&cการแลกเปลี่ยนไอเท็มผ่านการคลิกกะจะไม่สามารถใช้แท็กกับแต่ละรายการได้อย่างเต็มที่ นี่เป็นข้อจำกัดของ Bukkit API"
+    crafting: "&cการสร้างไอเท็มผ่านการ Shift-คลิก จะไม่ติดแท็กกับสิ่งของแต่ละชิ้นอย่างสมบูรณ์ นี่เป็นข้อจำกัดของ Bukkit API"
+    trading: "&cการแลกเปลี่ยนสิ่งของผ่านการ Shift-คลิก จะไม่ติดแท็กกับสิ่งของแต่ละชิ้นอย่างสมบูรณ์ นี่เป็นข้อจำกัดของ Bukkit API"
 
 # Change the default formatting for dates.
 # See: https://www.digitalocean.com/community/tutorials/java-simpledateformat-java-date-format
