@@ -6,6 +6,10 @@
 #            !!!               / คือการหยุดของ Color shades นั้นๆ เช่น </gold> , </gradient>
 #<bold> คือ Textformat ตัวหนา </bold> คือการหยุดของ textformat นั้น , /n คือการขี้นบรรทัดใหม่
 #ถ้าคำข้างหน้านั้นมี $ นำหน้าไม่ต้องแปลมันเป็น Placeholder Text หรือ Number เช่น $warn_prefix
+#
+# /reportadmin , /report , /reportadmin reports , /reportadmin accept , /reportadmin done 
+#    ไม่ต้องแปล ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#
 general:
   raw_prefix: '[LRI]' #ไม่ต้องแปล
   prefix: <gradient:dark_red:red>LRI Report</gradient> <gold>|</gold> #ไม่ต้องแปล
@@ -53,9 +57,9 @@ command:
         format: |-
           <click:run_command:'/reportadmin accept $id'><hover:show_text:'<blue>Reporter: <aqua>$reporter</aqua>
           Reported: <aqua>$reported</aqua>
-          Server: <aqua>$server</aqua>
+          เซิร์ฟเวอร์: <aqua>$server</aqua>
 
-          Reason: <aqua>$reason</aqua>
+          เหตุผล: <aqua>$reason</aqua>
 
            <yellow>Click to follow up report!'><gold>● <dark_blue>$reported</hover></click>
     accept:
