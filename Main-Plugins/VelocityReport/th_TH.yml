@@ -1,15 +1,12 @@
 #Contributors (สามารถใส่ชื้่อไว้เลยถ้าช่วยแปล)
 #  Live_Laika
+#  AkaSokuro
 
 
 # !!!  <Holder> คือพวก Color Shades ไม่ต้องแก้ เช่น <gold> , <gradient:dark_red:red>
 #            !!!               / คือการหยุดของ Color shades นั้นๆ เช่น </gold> , </gradient>
 #<bold> คือ Textformat ตัวหนา </bold> คือการหยุดของ textformat นั้น , /n คือการขี้นบรรทัดใหม่
 #ถ้าคำข้างหน้านั้นมี $ นำหน้าไม่ต้องแปลมันเป็น Placeholder Text หรือ Number เช่น $warn_prefix
-#
-# /reportadmin , /report , /reportadmin reports , /reportadmin accept , /reportadmin done 
-#    ไม่ต้องแปล ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#
 general:
   raw_prefix: '[LRI]' #ไม่ต้องแปล
   prefix: <gradient:dark_red:red>LRI Report</gradient> <gold>|</gold> #ไม่ต้องแปล
@@ -17,86 +14,79 @@ general:
   successful_prefix: <dark_gray>[</dark_gray><dark_green><bold>✔</bold><dark_gray>]</dark_gray> #ไม่ต้องแปล
   warn_prefix: <dark_gray>[</dark_gray><gold><bold>!</bold><dark_gray>]</dark_gray> #ไม่ต้องแปล
   error_prefix: <dark_gray>[</dark_gray><dark_red><bold>✘</bold><dark_gray>]</dark_gray> #ไม่ต้องแปล
-  only_players: $error_prefix <gradient:dark_red:red>Only players can use this command.
-  valid_parameters: $error_prefix <gradient:dark_red:red>Please use a valid parameter
-    for this command. <dark_gray>($argument)
-  unknown_message: $error_prefix <gradient:dark_red:red>Unknown message!
+  only_players: $error_prefix <gradient:dark_red:red>เฉพาะผู้เล่นที่ใช้คำสั่งได้
+  valid_parameters: $error_prefix <gradient:dark_red:red>โปรดระบุตัวแปรที่ถูกต้อง
+    สำหรับคำสั่งนี้ <dark_gray>($argument)
+  unknown_message: $error_prefix <gradient:dark_red:red>ข้อความไม่ทราบ!
 command:
-  no_permission: $error_prefix <gradient:dark_red:red>You don't have permission to
-    use this command! <dark_gray>($permission)
+  no_permission: $error_prefix <gradient:dark_red:red>คุณไม่มีสิทธิ์
+    เข้าถึงคำสั่งนี้! <dark_gray>($permission)
   report:
-    usage: '$warn_prefix <gradient:dark_red:red>Usage: <gold>/report <yellow><user>
+    usage: '$warn_prefix <gradient:dark_red:red>การใช้: <gold>/report <yellow><user>
       [reason]'
-    use: $successful_prefix <gradient:dark_green:green>$player successfully reported
-      for <aqua>$reason<aqua>!
-    no_target: $error_prefix <gradient:dark_red:red>Player not found!
-    prevent_self: $error_prefix <gradient:dark_red:red>You can't report yourself!
-    cooldown: $error_prefix <gradient:dark_red:red>You can't use this command for
-      <gold>$time</gold> seconds!
-    invalid_reason: $error_prefix <gradient:dark_red:red><gold>$reason</gold> is not
-      an invalid reason!
+    use: $successful_prefix <gradient:dark_green:green>$player รายงานเรียบร้อย
+      สำหรับ <aqua>$reason<aqua>!
+    no_target: $error_prefix <gradient:dark_red:red>ไม่พบผู้เล่น!
+    prevent_self: $error_prefix <gradient:dark_red:red>คุณรายงานตัวเองไม่ได้!
+    cooldown: $error_prefix <gradient:dark_red:red>คุณไม่สามารถใช้คำสั่งนั้นได้
+      <gold>$time</gold> วินาทึ!
+    invalid_reason: $error_prefix <gradient:dark_red:red><gold>$reason</gold> ไม่ใช่
+      เหตุผลที่ถูกต้อง!
     book:
       header:
-      - '<dark_red>❐ <gradient:dark_red:red>Report Reason:'
+      - '<dark_red>❐ <gradient:dark_red:red>เหตุผลการรายงาน:'
       - ''
       - ''
-      reason: "<click:run_command:'/report $player $id'><hover:show_text:'<blue>Description:\
-        \ $description \n\n <yellow>Click to report!'><gold>● <dark_blue>$name</hover></click>"
+      reason: "<click:run_command:'/report $player $id'><hover:show_text:'<blue>คำอธิบาย:\
+        \ $description \n\n <yellow>คลิกเพื่อรายงาน!'><gold>● <dark_blue>$name</hover></click>"
       footer:
       - ''
   reportadmin:
-    usage: '$warn_prefix <gradient:dark_red:red>Usage: <gold>/reportadmin <yellow><args>'
+    usage: '$warn_prefix <gradient:dark_red:red>การใช้: <gold>/reportadmin <yellow><args>'
     reload:
-      use: $successful_prefix <green>Plugin successfully reloaded!
+      use: $successful_prefix <green>ปลั๊กอินรีโหลดเสร็จสิ้น!
     reports:
-      receive: $warn_prefix <gradient:gold:yellow>Receiving reports data from database...
+      receive: $warn_prefix <gradient:gold:yellow>กำลังข้อมูลการรายงานจากฐานข้อมูล...
       book:
         header:
-        - '<dark_red>❐ <gradient:dark_red:red>Reports:'
+        - '<dark_red>❐ <gradient:dark_red:red>รายงาน:'
         - ''
         format: |-
-          <click:run_command:'/reportadmin accept $id'><hover:show_text:'<blue>Reporter: <aqua>$reporter</aqua>
-          Reported: <aqua>$reported</aqua>
+          <click:run_command:'/reportadmin accept $id'><hover:show_text:'<blue>ผู้รายงาน: <aqua>$reporter</aqua>
+          รายงาน: <aqua>$reported</aqua>
           เซิร์ฟเวอร์: <aqua>$server</aqua>
-
           เหตุผล: <aqua>$reason</aqua>
-
-           <yellow>Click to follow up report!'><gold>● <dark_blue>$reported</hover></click>
+           <yellow>คลิกเพื่อติดตามรายงาน!'><gold>● <dark_blue>$reported</hover></click>
     accept:
-      usage: '$warn_prefix <gradient:dark_red:red>Usage: <gold>/reportadmin accept
+      usage: '$warn_prefix <gradient:dark_red:red>การใช้: <gold>/reportadmin accept
         <yellow><report id>'
-      use: $successful_prefix <gradient:dark_green:green>Report successfully accepted
+      use: $successful_prefix <gradient:dark_green:green>การรายงานยอมรับเรียบร้อย
         ($id)!
-      already_accepted: $warn_prefix <gradient:red:gold>This report doesn't exist
-        or already accepted ($id)!
+      already_accepted: $warn_prefix <gradient:red:gold>การรายงานนี้ไม่มีอยู่
+        หรือได้รับการยอมรับแล้ว ($id)!
     done:
-      usage: '$warn_prefix <gradient:dark_red:red>Usage: <gold>/reportadmin done <yellow><report
+      usage: '$warn_prefix <gradient:dark_red:red>การใช้: <gold>/reportadmin done <yellow><report
         id>'
-      use: $successful_prefix <gradient:dark_green:green>Report successfully done
+      use: $successful_prefix <gradient:dark_green:green>รายงานสำเร็จเรียบร้อย
         ($id)!
-      already_done: $warn_prefix <gradient:red:gold>This report doesn't exist or already
-        done ($id)!
+      already_done: $warn_prefix <gradient:red:gold>รายงานนี้ไม่มีอยู่ หรือ ได้รายงานแล้ว ($id)!
     myreports:
-      receive: $warn_prefix <gradient:gold:yellow>Receiving your reports data from
-        database...
-      use: $successful_prefix <gradient:dark_green:green>Report successfully done
+      receive: $warn_prefix <gradient:gold:yellow>กำลังรับข้อมูลการรายงานของคุณจากฐานข้อมูล...
+      use: $successful_prefix <gradient:dark_green:green>รายงานสำเร็จเรียบร้อย
         ($id)!
       book:
         header:
-        - '<dark_red>❐ <gradient:dark_red:red>Your reports:'
+        - '<dark_red>❐ <gradient:dark_red:red>รายงานของคุณ:'
         - ''
         format: |-
-          <click:run_command:'/reportadmin done $id'><hover:show_text:'<blue>Reporter: <aqua>$reporter</aqua>
-          Reported: <aqua>$reported</aqua>
-          Server: <aqua>$server</aqua>
-
-          Reason: <aqua>$reason</aqua>
-
-           <yellow>Click to mark as done!'><gold>● <dark_blue>$reported</hover></click>
+          <click:run_command:'/reportadmin done $id'><hover:show_text:'<blue>ผู้รายงาน: <aqua>$reporter</aqua>
+          รายงาน: <aqua>$reported</aqua>
+          เซิร์ฟเวอร์: <aqua>$server</aqua>
+          เหตุผล: <aqua>$reason</aqua>
+           <yellow>คลิกเพื่อทำเครื่องหมายเสร็จ!'><gold>● <dark_blue>$reported</hover></click>
 report:
-  actionbar: <dark_red>⚠ <gradient:gold:yellow>There are <aqua>$reports</aqua> reports!
+  actionbar: <dark_red>⚠ <gradient:gold:yellow>มี <aqua>$reports</aqua> รายงาน!
   message: |-
-    <click:run_command:'/reportadmin reports'><hover:show_text:'<blue>Server: <aqua>$server</aqua>
-    Reason: <aqua>$reason</aqua>
-
-    <yellow>Click to see all reports!'><gold>● <blue>$reporter</blue> reported <blue>$reported</blue></hover></click>
+    <click:run_command:'/reportadmin reports'><hover:show_text:'<blue>เซิร์ฟเวอร์: <aqua>$server</aqua>
+    เหตุผล: <aqua>$reason</aqua>
+    <yellow>คลิกเพื่อดูการรายงานทั้งหมด!'><gold>● <blue>$reporter</blue> รายงาน <blue>$reported</blue></hover></click>
