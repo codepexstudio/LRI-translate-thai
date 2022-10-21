@@ -10,9 +10,9 @@ general:
   raw_prefix: '[LRI]' #ไม่ต้องแปล
   prefix: <gradient:dark_red:red>LRI Report</gradient> <gold>|</gold> #ไม่ต้องแปล
   console_prefix: <gray>[<gradient:dark_red:red>LRI Report</gradient>]</gray> #ไม่ต้องแปล
-  successful_prefix: <dark_gray>[</dark_gray><dark_green><bold>✔</bold><dark_gray>]</dark_gray>
-  warn_prefix: <dark_gray>[</dark_gray><gold><bold>!</bold><dark_gray>]</dark_gray>
-  error_prefix: <dark_gray>[</dark_gray><dark_red><bold>✘</bold><dark_gray>]</dark_gray>
+  successful_prefix: <dark_gray>[</dark_gray><dark_green><bold>✔</bold><dark_gray>]</dark_gray> #ไม่ต้องแปล
+  warn_prefix: <dark_gray>[</dark_gray><gold><bold>!</bold><dark_gray>]</dark_gray> #ไม่ต้องแปล
+  error_prefix: <dark_gray>[</dark_gray><dark_red><bold>✘</bold><dark_gray>]</dark_gray> #ไม่ต้องแปล
   only_players: $error_prefix <gradient:dark_red:red>Only players can use this command.
   valid_parameters: $error_prefix <gradient:dark_red:red>Please use a valid parameter
     for this command. <dark_gray>($argument)
