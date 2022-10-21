@@ -8,8 +8,8 @@
 #ถ้าคำข้างหน้านั้นมี $ นำหน้าไม่ต้องแปลมันเป็น Placeholder Text หรือ Number เช่น $warn_prefix
 general:
   raw_prefix: '[LRI]' #ไม่ต้องแปล
-  prefix: <gradient:dark_red:red>VelocityReport</gradient> <gold>|</gold>
-  console_prefix: <gray>[<gradient:dark_red:red>VelocityReport</gradient>]</gray>
+  prefix: <gradient:dark_red:red>LRI Report</gradient> <gold>|</gold> #ไม่ต้องแปล
+  console_prefix: <gray>[<gradient:dark_red:red>LRI Report</gradient>]</gray> #ไม่ต้องแปล
   successful_prefix: <dark_gray>[</dark_gray><dark_green><bold>✔</bold><dark_gray>]</dark_gray>
   warn_prefix: <dark_gray>[</dark_gray><gold><bold>!</bold><dark_gray>]</dark_gray>
   error_prefix: <dark_gray>[</dark_gray><dark_red><bold>✘</bold><dark_gray>]</dark_gray>
